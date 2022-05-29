@@ -2,8 +2,11 @@
 
 def sort(arr)
   return arr if arr.size < 2
-
-  merge(sort(arr.slice!(0, arr.size / 2)), sort(arr))
+  
+  sliced_arr = arr.each_slice( (arr.size / 2.0).round ).to_a
+  arr_left = sliced_arr.first
+  arr_right = sliced_arr.last
+  merge( sort(arr_left), sort(arr_right) )
 end
 
 def merge(left, right)
