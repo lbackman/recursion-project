@@ -12,10 +12,10 @@ end
 def merge(left, right)
   merged = []
   while left.first || right.first
-    if left.first.nil?
+    if left.empty?
       merged.push(right).flatten!
       right.clear
-    elsif right.first.nil?
+    elsif right.empty?
       merged.push(left).flatten!
       left.clear
     else
