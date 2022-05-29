@@ -15,7 +15,7 @@ end
 
 # Fibonacci with recursion v1: first order recurrence
 def fibs_rec1(n, arr = [0, 1])
-  arr[n] ? arr[0..n] : fibs_rec1(n, arr << arr[0..-2].last + arr[0..-1].last)
+  arr[n] ? arr[0..n] : fibs_rec1(n, arr << arr[-2] + arr[-1])
 end
 
 # Fibonacci with recursion v2: second order recurrence
