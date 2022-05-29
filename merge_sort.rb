@@ -3,10 +3,10 @@
 def merge_sort(arr)
   return arr if arr.size < 2
 
-  sliced_arr = arr.each_slice((arr.size / 2.0).round).to_a
-  arr_left = sliced_arr.first
-  arr_right = sliced_arr.last
-  merge(merge_sort(arr_left), merge_sort(arr_right))
+  mid = arr.size / 2
+  arr_left = merge_sort(arr[0...mid])
+  arr_right = merge_sort(arr[mid..-1])
+  merge(arr_left, arr_right)
 end
 
 def merge(left, right)
